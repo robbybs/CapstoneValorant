@@ -28,6 +28,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+        task("favorite.exportReleaseConsumerProguardFiles") {
+            dependsOn("favorite.extractProguardFiles")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
