@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    //just try to fixing
+    tasks.named(":favorite:exportReleaseConsumerProguardFiles").configure { dependsOn(":favorite:extractProguardFiles") }
 }
 
 dependencies {
