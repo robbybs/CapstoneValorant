@@ -22,6 +22,11 @@ android {
                 "proguard-rules.pro"
             )
         }
+        tasks.configureEach {
+            if (name == "kspKotlin") {
+                mustRunAfter(tasks.extractProguardFiles)
+            }
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
