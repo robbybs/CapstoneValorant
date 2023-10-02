@@ -22,10 +22,19 @@ android {
                 "proguard-rules.pro"
             )
         }
-        tasks.configureEach {
-            if (name == "kspKotlin") {
-                mustRunAfter(tasks.extractProguardFiles)
-            }
+//        tasks.named("exportReleaseConsumerProguardFiles") {
+//            mustRunAfter("extractProguardFiles")
+//        }
+//        tasks.configureEach {
+//            if (name == "kspKotlin") {
+//                mustRunAfter(tasks.extractProguardFiles)
+//            }
+//        }
+        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+            dependsOn(tasks.withType<AntlrTask>())
+        }
+        tasks.withType<Jar>().configureEach {
+            dependsOn(tasks.withType<AntlrTask>())
         }
     }
     compileOptions {
