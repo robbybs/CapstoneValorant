@@ -19,20 +19,23 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro", "consumer-rules.pro"
+                "proguard-rules.pro"
             )
         }
+//        tasks.named("exportReleaseConsumerProguardFiles").configure {
+//            dependsOn("extractProguardFiles")
+//        }
 //        tasks.named("exportReleaseConsumerProguardFiles").configure {
 //            dependsOn("extractProguardFiles")
 //        }
 //        tasks.named("exportReleaseConsumerProguardFiles") {
 //            mustRunAfter("extractProguardFiles")
 //        }
-//        tasks.configureEach {
-//            if (name == "kspKotlin") {
-//                mustRunAfter(tasks.extractProguardFiles)
-//            }
-//        }
+        tasks.configureEach {
+            if (name == "exportReleaseConsumerProguardFiles") {
+                mustRunAfter(tasks.extractProguardFiles)
+            }
+        }
 //        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
 //            dependsOn(tasks.withType<AntlrTask>())
 //        }
