@@ -19,9 +19,12 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro", "consumer-rules.pro"
             )
         }
+//        tasks.named("exportReleaseConsumerProguardFiles").configure {
+//            dependsOn("extractProguardFiles")
+//        }
 //        tasks.named("exportReleaseConsumerProguardFiles") {
 //            mustRunAfter("extractProguardFiles")
 //        }
