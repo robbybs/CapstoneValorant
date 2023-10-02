@@ -17,10 +17,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro"
+//            )
         }
 //        tasks.named("exportReleaseConsumerProguardFiles") {
 //            mustRunAfter("extractProguardFiles")
@@ -30,12 +30,12 @@ android {
 //                mustRunAfter(tasks.extractProguardFiles)
 //            }
 //        }
-        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-            dependsOn(tasks.withType<AntlrTask>())
-        }
-        tasks.withType<Jar>().configureEach {
-            dependsOn(tasks.withType<AntlrTask>())
-        }
+//        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+//            dependsOn(tasks.withType<AntlrTask>())
+//        }
+//        tasks.withType<Jar>().configureEach {
+//            dependsOn(tasks.withType<AntlrTask>())
+//        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
