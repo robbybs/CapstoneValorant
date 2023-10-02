@@ -40,10 +40,14 @@ android {
 }
 
 dependencies {
+
     val roomVersion = "2.5.2"
     val retrofitVersion = "2.9.0"
     val coroutinesVersion = "1.6.4"
     val koinVersion = "3.3.2"
+
+    //add new
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     api("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.core:core-ktx:1.9.0")
