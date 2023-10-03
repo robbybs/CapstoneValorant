@@ -5,11 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rbs.capstonevalorant.databinding.ActivityFavoriteBinding
+
 import com.rbs.capstonevalorant.presentation.DetailActivity
 import com.rbs.capstonevalorant.presentation.MainActivity
 import com.rbs.capstonevalorant.presentation.MainAdapter
 import com.rbs.core.domain.model.Agents
+import com.rbs.favorite.databinding.ActivityFavoriteBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 

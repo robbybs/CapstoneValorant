@@ -16,7 +16,7 @@ interface AgentsDao {
     @Query("SELECT * FROM agents where favorite = 1")
     fun getFavoriteAgents(): Flow<List<AgentsEntity>>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAgents(agents: List<AgentsEntity>)
 
     @Update
