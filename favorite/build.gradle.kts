@@ -13,36 +13,6 @@ android {
         minSdk = 26
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
-//    buildTypes {
-//        release {
-//            isMinifyEnabled = false
-//            proguardFiles(
-//                getDefaultProguardFile("proguard-android-optimize.txt"),
-//                "proguard-rules.pro"
-//            )
-//        }
-//        tasks.named("exportReleaseConsumerProguardFiles").configure {
-//            dependsOn("extractProguardFiles")
-//        }
-//        tasks.named("exportReleaseConsumerProguardFiles").configure {
-//            dependsOn("extractProguardFiles")
-//        }
-//        tasks.named("exportReleaseConsumerProguardFiles") {
-//            mustRunAfter("extractProguardFiles")
-//        }
-//        tasks.configureEach {
-//            if (name == "exportReleaseConsumerProguardFiles") {
-//                mustRunAfter(tasks.extractProguardFiles)
-//            }
-//        }
-//        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-//            dependsOn(tasks.withType<AntlrTask>())
-//        }
-//        tasks.withType<Jar>().configureEach {
-//            dependsOn(tasks.withType<AntlrTask>())
-//        }
-//    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
